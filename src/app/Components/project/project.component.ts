@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProjectService} from "../../Services/Project.Service";
 import {Project} from "../../Project";
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-project',
@@ -14,6 +14,10 @@ export class ProjectComponent implements OnInit {
   projectName: string;
   hasImage: boolean = false;
   curIndex: number = 0;
+  data: number[] = [];
+  labels: string[] = [];
+  chartType: string = 'pie';
+  dataAvailable: boolean = false;
   constructor(private projectService: ProjectService, private route: ActivatedRoute){
     this.route.params.subscribe(params => {
       this.projectName = params['projectName'];
@@ -23,6 +27,15 @@ export class ProjectComponent implements OnInit {
       if(this.project.images.length){
         this.hasImage = true;
       }
+      let newLabels:string[] = [];
+      let newData:number[] = [];
+      for(var key in this.project.technology.proportion){
+        newData.push(this.project.technology.proportion[key]);
+        newLabels.push(key);
+      }
+      this.labels = newLabels;
+      this.data = newData;
+      this.dataAvailable = true;
     });
   }
 

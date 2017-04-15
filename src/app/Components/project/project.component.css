@@ -7,15 +7,15 @@
   border: 2px solid black;
   background: #ff3b3f;
 }
-
+.canvas{
+  height:296px;
+  width:296px;
+}
 .container {
   max-height: 900px;
   display: flex;
   flex-flow: column wrap;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  justify-content: center;
+  width: 1200px;
 }
 
 @media only screen and (max-width: 1200px) {

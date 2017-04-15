@@ -8,6 +8,7 @@ import { AppComponent } from './Components/app.component';
 import { AboutmeComponent } from './Components/aboutme/aboutme.component';
 import { HomeComponent } from './Components/home/home.component';
 import { ProjectComponent } from './Components/project/project.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ProjectComponent } from './Components/project/project.component';
         path: 'projects/:projectName',
         component: ProjectComponent
       }
-    ])
+    ]),
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
