@@ -5,6 +5,6 @@ export class Project {
   name: string;
   page: string;
   technology: Technology;
-  description: Descriptions;
+  descriptions: Descriptions;
   images: string[];
 }

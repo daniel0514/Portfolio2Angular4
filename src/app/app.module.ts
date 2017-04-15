@@ -7,12 +7,14 @@ import { RouterModule } from '@angular/router'
 import { AppComponent } from './Components/app.component';
 import { AboutmeComponent } from './Components/aboutme/aboutme.component';
 import { HomeComponent } from './Components/home/home.component';
+import { ProjectComponent } from './Components/project/project.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutmeComponent,
-    HomeComponent
+    HomeComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +28,10 @@ import { HomeComponent } from './Components/home/home.component';
       {
         path: '',
         component: HomeComponent
+      },
+      {
+        path: 'projects/:projectName',
+        component: ProjectComponent
       }
     ])
   ],

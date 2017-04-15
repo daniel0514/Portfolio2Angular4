@@ -15,11 +15,6 @@ export class HomeComponent implements OnInit {
   constructor(private projectService: ProjectService){
     this.projectService.getProjects().subscribe(projects => {
       this.projects = projects;
-      for (let project of this.projects) {;
-        console.log(project.page);
-        project.page = project.page.replace("#", "");
-        console.log(project.page);
-      }
       this.hovered = new Array(this.projects.length);
       for(var i = 0; i < this.projects.length; i++){
         this.hovered[i] = false;
@@ -57,6 +52,10 @@ export class HomeComponent implements OnInit {
       console.log(tech);
       return null;
     }
+  }
+
+  getHrefPath(name){
+    return "/projects/" + name;
   }
 
   ngOnInit() {

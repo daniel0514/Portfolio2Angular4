@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="subcell paragraph1"><p >{{project?.descriptions?.paragraph1}}</p></div>
+  <div class="subcell empty" *ngIf="hasImage == false"></div>
+  <div class="subcell paragraph2" *ngIf="hasImage"><p>{{project?.descriptions?.paragraph2}}</p></div>
+  <div class="subcell randomColor">
+    <canvas class="technologyPie" id="OneClickUploadPie">
+      Sorry, your browser does not support the canvas tag.
+    </canvas>
+    <div id="technologyPieLegend" style="display: inline-block;"></div>
+  </div>
+  <div class="gallery randomColor" *ngIf="hasImage">
+    <div class="imageGallery">
+      <img class="imageSlide" [src] = "getImagePath(project?.images[0])">
+    </div>
+  </div>
+  <div class="thumbnails randomColor" *ngIf="hasImage">
+    <button class="galleryButton left" (click)="changeImage(-1)">&#10094;</button>
+    <img class="thumbnail" *ngFor="let image of project.images; let i = index" (click)="showImg(curIndex = i)" [src]="getImagePath(image)">
+    <button class="galleryButton right" (click)="changeImage(1)">&#10095;</button>
+  </div>
+  <div class="subcell empty" *ngIf="hasImage == false"></div>
+  <div class="subcell paragraph2" *ngIf="hasImage == false"><p>{{project?.descriptions?.paragraph2}}</p></div>
+  <div class="subcell empty" *ngIf="hasImage == false"></div>
+</div>

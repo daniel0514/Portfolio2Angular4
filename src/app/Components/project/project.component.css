@@ -1,0 +1,89 @@
+.subcell{
+  height:296px;
+  width:596px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  background: #ff3b3f;
+}
+
+.container {
+  max-height: 900px;
+  display: flex;
+  flex-flow: column wrap;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    display: flex;
+    max-height: 1800px;
+    flex-flow: column wrap;
+  }
+}
+
+.subcell p{
+  padding: 0px 30px;
+  font-size: 1.5em;
+}
+
+.technologyPie {
+  display: inline-block;
+  height: 250px;
+  width: 500px;
+  padding: 25px 0px 25px 0px;
+}
+
+.imageSlide {
+  max-width: 80%;
+  max-height: 80%;
+  padding: 10%;
+  margin: 0 auto;
+  display:table;
+  opacity: 1;
+}
+
+.imageGallery{
+  height: 600px;
+  width: 600px;
+  float:left;
+}
+
+.gallery{
+  height:596px;
+  width:596px;
+  border: 2px solid black;
+  background: #ff3b3f;
+}
+
+.galleryButton{
+  height: 30px;
+  width: 30px;
+  float: left;
+  position: relative;
+  top: 120px;
+  margin: 10px;
+}
+
+.right {
+  /*right: -120px;*/
+  float:right;
+}
+
+.thumbnails{
+  height: 296px;
+  width: 596px;
+  border: 2px solid black;
+  background: #ff3b3f;
+}
+
+.thumbnail{
+  max-height: 200px;
+  max-width: 115px;
+  padding: 50px 5px 5px 5px;
+  float:left;
+}
