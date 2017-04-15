@@ -48,7 +48,6 @@ export class ProjectComponent implements OnInit {
    */
   showImg(index){
     var imgSlide = document.getElementsByClassName('imageSlide')[0] as HTMLImageElement;
-    var thumbnails = document.getElementsByClassName('thumbnail');
     var images = this.project.images;
     if(index >= images.length){
       this.curIndex = index % images.length;
