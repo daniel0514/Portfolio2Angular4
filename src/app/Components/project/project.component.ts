@@ -88,7 +88,7 @@ export class ProjectComponent implements OnInit {
     }
 
   getImagePath(image){
-    return "../../../assets/img/projects" + image;
+    return "./assets/img/projects" + image;
   }
 
   rawJSONProject: string = `[

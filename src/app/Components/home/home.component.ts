@@ -37,25 +37,25 @@ export class HomeComponent implements OnInit {
    */
   getTechnologyPath(tech){
     if(tech.includes("Android")){
-      return "../assets/img/skills/Android_Icon.png";
+      return "./assets/img/skills/Android_Icon.png";
     } else if(tech.includes("Java")){
-      return "../assets/img/skills/Java_Icon.png";
+      return "./assets/img/skills/Java_Icon.png";
     } else if(tech.includes("SQL")){
-      return "../assets/img/skills/SQL_Icon.png";
+      return "./assets/img/skills/SQL_Icon.png";
     } else if(tech.includes("HTML")){
-      return "../assets/img/skills/HTML_Icon.png";
+      return "./assets/img/skills/HTML_Icon.png";
     }  else if(tech.includes("CSS")){
-      return "../assets/img/skills/CSS_Icon.png";
+      return "./assets/img/skills/CSS_Icon.png";
     } else if(tech.includes("JavaScript")){
-      return "../assets/skills/JS_Icon.png";
+      return "./assets/skills/JS_Icon.png";
     } else if(tech.includes("BootStrap")){
-      return "../assets/img/skills/Bootstrap_Icon.png";
+      return "./assets/img/skills/Bootstrap_Icon.png";
     } else if(tech.includes("Unity")){
-      return "../assets/img/skills/UNITY_Icon.png";
+      return "./assets/img/skills/UNITY_Icon.png";
     } else if(tech.includes("CSharp")){
-      return "../assets/img/skills/CSharp_Icon.png";
+      return "./assets/img/skills/CSharp_Icon.png";
     } else if(tech.includes("PHP")){
-      return "../assets/img/skills/PHP_Icon.png";
+      return "./assets/img/skills/PHP_Icon.png";
     } else {
       console.log(tech);
       return null;
