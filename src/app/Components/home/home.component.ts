@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit {
   }
 
   getHrefPath(name){
-    return "projects/" + name;
+    return "projects/" + name + "/";
   }
 
   ngOnInit() {

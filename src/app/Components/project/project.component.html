@@ -3,14 +3,12 @@
   <div class="subcell empty" *ngIf="hasImage == false"></div>
   <div class="subcell paragraph2" *ngIf="hasImage"><p>{{project?.descriptions?.paragraph2}}</p></div>
   <div class="subcell randomColor" *ngIf="dataAvailable">
-    <div class="canvas">
-      <canvas baseChart
-              [data]="data"
-              [labels]="labels"
-              [chartType]="chartType">
-        Sorry, your browser does not support the canvas tag.
-      </canvas>
-    </div>
+    <canvas baseChart
+            [data]="data"
+            [labels]="labels"
+            [chartType]="chartType">
+      Sorry, your browser does not support the canvas tag.
+    </canvas>
   </div>
   <div class="gallery randomColor" *ngIf="hasImage">
     <div class="imageGallery">
