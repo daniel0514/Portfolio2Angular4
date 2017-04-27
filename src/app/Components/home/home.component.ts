@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {Project} from "../../Project";
 import {ProjectService} from "../../Services/Project.Service";
 
@@ -8,21 +8,28 @@ import {ProjectService} from "../../Services/Project.Service";
   styleUrls: ['./home.component.css'],
   providers: [ProjectService]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent{
+  //Array of projects
   projects: Project[];
+  //Array of Boolean, indicating which hovered project information to display
   hovered: boolean[];
 
   constructor(private projectService: ProjectService){
     this.projectService.getProjects().subscribe(projects => {
+      //Get the Project Information from Restful API
       this.projects = projects;
+      //Initialize Hovered array based on the number of projects
       this.hovered = new Array(this.projects.length);
       for(var i = 0; i < this.projects.length; i++){
         this.hovered[i] = false;
       }
     }, error => {
+      //Handles Error from Project Service
       console.log("Failed to connect to API Server. Will now load default project information")
       console.log(error)
+      //Load Default Project Information by Parsing Predefined JSON String
       this.projects = JSON.parse(this.rawJSONProject);
+      //Initialize Hovered array based on the number of projects
       this.hovered = new Array(this.projects.length);
       for(var i = 0; i < this.projects.length; i++){
         this.hovered[i] = false;
@@ -62,13 +69,16 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  /**
+   * An Adaptor for links to different project pages
+   * @param name      : Project Name
+   * @returns {string}: The Link to the project page
+   */
   getHrefPath(name){
     return "projects/" + name + "/";
   }
 
-  ngOnInit() {
-  }
-
+  //Predefined Project Information. Used when Restful API for Project Information is offline
   rawJSONProject: string = `[
   {
     "_id": "58c88fc67deeb9153f842f43",

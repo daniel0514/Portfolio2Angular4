@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {ProjectService} from "../../Services/Project.Service";
 import {Project} from "../../Project";
 import { ActivatedRoute } from '@angular/router';
@@ -9,24 +9,37 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./project.component.css'],
   providers: [ProjectService]
 })
-export class ProjectComponent implements OnInit {
+export class ProjectComponent{
+  //Project Information
   project: Project;
+  //Dynamic Project Name Based on Route Parameter
   projectName: string;
+  //Boolean value to indicate if the projecct has images
   hasImage: boolean = false;
+  //If has image, the index of the image currently displayed
   curIndex: number = 0;
+  //Parameters for ChartJS to construct the pie chart
+  //Data of the Pie Chart
   data: number[] = [];
+  //Labels of the Pie Chart
   labels: string[] = [];
+  //Type of the chart, we use Pie Chart here
   chartType: string = 'pie';
+  //To indicate whether Project Information is available
   dataAvailable: boolean = false;
   constructor(private projectService: ProjectService, private route: ActivatedRoute){
+    //Get the Route parameter
     this.route.params.subscribe(params => {
       this.projectName = params['projectName'];
     });
+    //Get the project information from Project Service
     this.projectService.getProject(this.projectName).subscribe(project => {
+      //Saving Project Info
       this.project = project;
       if(this.project.images.length){
         this.hasImage = true;
       }
+      //Recreate the Pie Chart by feeding new data
       let newLabels:string[] = [];
       let newData:number[] = [];
       for(var key in this.project.technology.proportion){
@@ -37,9 +50,12 @@ export class ProjectComponent implements OnInit {
       this.data = newData;
       this.dataAvailable = true;
     }, error => {
+      //Handles Error from Project Service
       console.log("Failed to connect to API Server. Will now load default project information")
       console.log(error)
+      //Load Default Project Information by Parsing Predefined JSON String
       var projects: Project[] = JSON.parse(this.rawJSONProject)
+      //Fetch the correct Project information based on Routing parameter
       for(var project of projects){
         if(project.name === this.projectName){
           this.project = project;
@@ -50,6 +66,7 @@ export class ProjectComponent implements OnInit {
       if(this.project.images.length){
         this.hasImage = true;
       }
+      //Recreate the Pie Chart by feeding new data
       let newLabels:string[] = [];
       let newData:number[] = [];
       for(var key in this.project.technology.proportion){
@@ -60,9 +77,6 @@ export class ProjectComponent implements OnInit {
       this.data = newData;
       this.dataAvailable = true;
     });
-  }
-
-  ngOnInit() {
   }
 
   /**
@@ -87,10 +101,16 @@ export class ProjectComponent implements OnInit {
       this.showImg(this.curIndex += indexChange);
     }
 
+  /**
+   * Add the Image folder path
+   * @param image       : Location of the Image in Image Folder
+   * @returns {string}  : The Complete path to the Image
+   */
   getImagePath(image){
     return "./assets/img/projects" + image;
   }
 
+  //Predefined Project Information. Used when Restful API for Project Information is offline
   rawJSONProject: string = `[
   {
     "_id": "58c88fc67deeb9153f842f43",
