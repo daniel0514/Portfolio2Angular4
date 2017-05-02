@@ -4,7 +4,7 @@
   <a href="aboutme"><div class="cell"><div><p>My name is Daniel Hsiao. I'm currently a fourth year Computer Science student at the University of British Coumbia. My interest is mainly in Web Development and Application Development, especially Android Development.</p></div></div></a>
   <a href="aboutme"><div class="cell"><div><ul>Skill set:</ul><li>Java</li><li>JavaScript</li><li>HTML & CSS</li><li>SQL and Databases</li></div></div></a>
   <div class="cell" id="beforeProjects" ><p></p></div>
-  <a *ngFor="let project of projects; let i = index;" [href] = 'getHrefPath(project.name)' on-mouseover='hovered[i] = true' on-mouseleave="hovered[i] = false">
+  <a *ngFor="let project of projectsIn; let i = index;" (@animateIn.done) = "nextProject()" [@animateIn] = "'in'" [href] = 'getHrefPath(project.name)' on-mouseover='hovered[i] = true' on-mouseleave="hovered[i] = false">
     <div class="cell project" *ngIf="hovered[i] == false">
       <div>
         <p>{{project.name}}</p>

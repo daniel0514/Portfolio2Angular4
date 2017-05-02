@@ -9,6 +9,7 @@ import { AboutmeComponent } from './Components/aboutme/aboutme.component';
 import { HomeComponent } from './Components/home/home.component';
 import { ProjectComponent } from './Components/project/project.component';
 import { ChartsModule } from 'ng2-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ChartsModule } from 'ng2-charts';
         component: ProjectComponent
       }
     ]),
-    ChartsModule
+    ChartsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

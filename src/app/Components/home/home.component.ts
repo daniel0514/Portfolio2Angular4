@@ -1,16 +1,32 @@
 import { Component } from '@angular/core';
 import {Project} from "../../Project";
 import {ProjectService} from "../../Services/Project.Service";
-
+import {trigger, state, style, transition, animate, keyframes} from "@angular/animations";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  providers: [ProjectService]
+  providers: [ProjectService],
+  animations: [
+    trigger('animateIn',[
+      state('in', style({transform: 'translateY(0)'})),
+      transition('void => *', [
+        animate(500, keyframes([
+          style({opacity: 0}),
+          style({opacity: 0.25}),
+          style({opacity: 0.5}),
+          style({opacity: 0.75}),
+          style({opacity: 1})
+        ]))
+      ])
+    ])
+  ]
 })
 export class HomeComponent{
   //Array of projects
   projects: Project[];
+  projectsIn: Project[] = [];
+  nextProjectIndex: number = 0;
   //Array of Boolean, indicating which hovered project information to display
   hovered: boolean[];
 
@@ -23,6 +39,7 @@ export class HomeComponent{
       for(var i = 0; i < this.projects.length; i++){
         this.hovered[i] = false;
       }
+      this.nextProject();
     }, error => {
       //Handles Error from Project Service
       console.log("Failed to connect to API Server. Will now load default project information")
@@ -66,6 +83,12 @@ export class HomeComponent{
     } else {
       console.log(tech);
       return null;
+    }
+  }
+
+  nextProject(){
+    if(this.nextProjectIndex < this.projects.length){
+      this.projectsIn.push(this.projects[this.nextProjectIndex++]);
     }
   }
 
