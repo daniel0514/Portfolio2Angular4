@@ -25,7 +25,9 @@ import {trigger, state, style, transition, animate, keyframes} from "@angular/an
 export class HomeComponent{
   //Array of projects
   projects: Project[];
+  //Array of Projects being displayed
   projectsIn: Project[] = [];
+  //Current Index of the project that is being added to projectsIn
   nextProjectIndex: number = 0;
   //Array of Boolean, indicating which hovered project information to display
   hovered: boolean[];
@@ -51,6 +53,7 @@ export class HomeComponent{
       for(var i = 0; i < this.projects.length; i++){
         this.hovered[i] = false;
       }
+      this.nextProject();
     });
   }
 
@@ -86,6 +89,10 @@ export class HomeComponent{
     }
   }
 
+  /**
+   * Responsible for ngFor delayed animation effect.
+   * Will add project to display project array one by one
+   */
   nextProject(){
     if(this.nextProjectIndex < this.projects.length){
       this.projectsIn.push(this.projects[this.nextProjectIndex++]);
