@@ -66,6 +66,8 @@ img {
     background: #ff3b3f;
     opacity: 0.85;
     font-size: 1em;
+    min-width: 250px;
+    min-height: 250px;
   }
 
   .circularImg{

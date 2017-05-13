@@ -1,54 +1,103 @@
 
 .cell{
-  height:296px;
-  width:596px;
+  height:20vw;
+  width:40vw;
   border: 2px solid black;
   background: #CAEBF2;
-}
-.paragraph{
-  height:300px;
-  width:600px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .container {
-  max-height: 900px;
+  max-height: 65vw;
   display:flex;
   flex-flow:column wrap;
   align-content:center;
 }
 
-@media only screen and (max-width: 1200px) {
-  .container {
-    display: flex;
-    max-height: 1800px;
-    flex-flow: column wrap;
-  }
-
-}
-body{
-  animation: colorLoop 5s infinite;
-  display:table-cell;
-  padding: 30px;
-  vertical-align: middle;
-}
-
-@keyframes colorLoop {
-  0%{background-color: #66ccff}
-  50%{background-color: #1ab2ff}
-  100%{background-color: #66ccff}
-}
-
-html {
-  display: table;
-  margin: auto;
-}
-
 .cell p{
   font-size: 1.5em;
-  padding: 0px 30px 0px 30px;
+  padding: 0 2em 0 2em;
+}
+
+.skills {
+  flex: 1;
+}
+.skillPies{
+  flex: 3;
+  display: flex;
+  flex-direction: row;
+}
+
+.arc {
+  width: 6vw;
+  height: 6vw;
+  min-width: 50px;
+  min-height: 50px;
+  border-radius:100%;
+  border:1vw solid #0066ff;
+  transform: rotate(-45deg);
+  background: #68b9ff;
+  margin: 1vw;
+}
+
+.text{
+  text-align: center;
+  font-size: 0.90em;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  min-width: 75px;
+  justify-content: center;
+  align-items: center;
+}
+
+.arc-34 {
+  border-color:transparent #0066ff #0066ff #0066ff;
+}
+
+.arc-12 {
+  border-color:transparent #0066ff #0066ff transparent;
+}
+
+.arc-14 {
+  border-color:transparent #0066ff transparent transparent;
+}
+@media only screen and (max-width: 1200px) {
+
+  .container {
+    flex-flow:column;
+  }
+
+  .cell p{
+    padding: 0 10vw 0 10vw;
+  }
+
+  .arc {
+    width: 10vw;
+    height: 10vw;
+    margin: 1vw;
+  }
+
+  .cell {
+    width: 60vw;
+    min-height: 60vw;
+    min-height: 280px;
+    min-width: 280px;
+  }
+
+
+}
+@media only screen and (max-width: 950px) {
+
+  .cell p{
+    font-size: 1em;
+    padding: 0 10vw 0 10vw;
+  }
 
 }
 
