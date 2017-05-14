@@ -21,8 +21,8 @@
 }
 
 .imageSlide {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 80%;
+  max-height: 80%;
   padding: 5%;
   margin: 0 auto;
   opacity: 1;
@@ -40,9 +40,7 @@
 }
 
 .galleryButton{
-  height: 45vw;
-  width: 2vw;
-  padding: 1vw;
+  height: 10vw;
 }
 
 canvas {
@@ -66,10 +64,6 @@ canvas {
     height:120vw;
     width:80vw;
   }
-  .galleryButton{
-    height: 120vw;
-  }
-
   .subcell p{
     font-size: 3vw;
   }
