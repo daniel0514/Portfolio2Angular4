@@ -36,25 +36,28 @@ export class HomeComponent{
     this.projectService.getProjects().subscribe(projects => {
       //Get the Project Information from Restful API
       this.projects = projects;
-      //Initialize Hovered array based on the number of projects
-      this.hovered = new Array(this.projects.length);
-      for(var i = 0; i < this.projects.length; i++){
-        this.hovered[i] = false;
-      }
-      this.nextProject();
+      this.processProjectData();
     }, error => {
       //Handles Error from Project Service
       console.log("Failed to connect to API Server. Will now load default project information")
       console.log(error)
       //Load Default Project Information by Parsing Predefined JSON String
       this.projects = JSON.parse(this.rawJSONProject);
-      //Initialize Hovered array based on the number of projects
-      this.hovered = new Array(this.projects.length);
-      for(var i = 0; i < this.projects.length; i++){
-        this.hovered[i] = false;
-      }
-      this.nextProject();
+      this.processProjectData();
     });
+  }
+
+  /**
+   * Function to set variables based on Project data
+   * from API or default project information
+   */
+  processProjectData(){
+    //Initialize Hovered array based on the number of projects
+    this.hovered = new Array(this.projects.length);
+    for(var i = 0; i < this.projects.length; i++){
+      this.hovered[i] = false;
+    }
+    this.nextProject();
   }
 
   /**

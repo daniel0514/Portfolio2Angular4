@@ -36,19 +36,7 @@ export class ProjectComponent{
     this.projectService.getProject(this.projectName).subscribe(project => {
       //Saving Project Info
       this.project = project;
-      if(this.project.images.length){
-        this.hasImage = true;
-      }
-      //Recreate the Pie Chart by feeding new data
-      let newLabels:string[] = [];
-      let newData:number[] = [];
-      for(var key in this.project.technology.proportion){
-        newData.push(this.project.technology.proportion[key]);
-        newLabels.push(key);
-      }
-      this.labels = newLabels;
-      this.data = newData;
-      this.dataAvailable = true;
+      this.processProjectData();
     }, error => {
       //Handles Error from Project Service
       console.log("Failed to connect to API Server. Will now load default project information")
@@ -62,21 +50,29 @@ export class ProjectComponent{
           break;
         }
       }
-
-      if(this.project.images.length){
-        this.hasImage = true;
-      }
-      //Recreate the Pie Chart by feeding new data
-      let newLabels:string[] = [];
-      let newData:number[] = [];
-      for(var key in this.project.technology.proportion){
-        newData.push(this.project.technology.proportion[key]);
-        newLabels.push(key);
-      }
-      this.labels = newLabels;
-      this.data = newData;
-      this.dataAvailable = true;
+      this.processProjectData();
     });
+  }
+
+  /**
+   * Function to set variables based on Project data
+   * from API or default project information. Also sets
+   * up the PIE chart.
+   */
+  processProjectData(){
+    if(this.project.images.length){
+      this.hasImage = true;
+    }
+    //Recreate the Pie Chart by feeding new data
+    let newLabels:string[] = [];
+    let newData:number[] = [];
+    for(var key in this.project.technology.proportion){
+      newData.push(this.project.technology.proportion[key]);
+      newLabels.push(key);
+    }
+    this.labels = newLabels;
+    this.data = newData;
+    this.dataAvailable = true;
   }
 
   /**
