@@ -11,13 +11,8 @@
     </canvas>
   </div>
   <div class="gallery" *ngIf="hasImage">
-    <div class="imageGallery">
-      <img class="imageSlide" [src] = "getImagePath(project?.images[0])">
-    </div>
-  </div>
-  <div class="thumbnails" *ngIf="hasImage">
     <button class="galleryButton left" (click)="changeImage(-1)">&#10094;</button>
-    <img class="thumbnail" *ngFor="let image of project.images; let i = index" (click)="showImg(curIndex = i)" [src]="getImagePath(image)">
+    <img class="imageSlide" [src] = "getImagePath(project?.images[0])">
     <button class="galleryButton right" (click)="changeImage(1)">&#10095;</button>
   </div>
   <div class="subcell" *ngIf="hasImage == false"></div>
