@@ -1,6 +1,6 @@
 <div class="container">
   <div class="cell imageCell"><img src="./assets/img/profilePicture.jpg" class="circularImg"/></div>
-  <a href="aboutme"><div class="cell"><div><p>Name's Yung Tse (Daniel) Hsiao. I graduated from UBC with a Bachelor of Computer Science Degree in 2017.</p></div></div></a>
+  <a href="aboutme"><div class="cell"><div><p>Name's Daniel (Yung Tse) Hsiao. I graduated from UBC with a Bachelor of Computer Science Degree in 2017.</p></div></div></a>
   <a href="aboutme"><div class="cell"><div><p>My interest is mainly in Web Development and Application Development, especially Android Development.</p></div></div></a>
   <a href="aboutme"><div class="cell"><div><ul>Skill set:</ul><li>Java</li><li>JavaScript</li><li>HTML & CSS</li><li>SQL and Databases</li></div></div></a>
   <div class="cell" id="beforeProjects" ><p></p></div>
@@ -8,7 +8,7 @@
     <div class="cell project" *ngIf="hovered[i] == false">
       <div>
         <p>{{project.name}}</p>
-        <img *ngFor="let image of project.technology.icons" [src]="getTechnologyPath(image)"/>
+        <img *ngFor="let image of project.technology.icons" [src]="getTechnologyPath(image)" class="technologyIcon"/>
       </div>
     </div>
     <div class="cell project" *ngIf="hovered[i] == true">

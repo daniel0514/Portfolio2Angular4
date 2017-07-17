@@ -30,6 +30,11 @@
   margin: 0;
 }
 
+.technologyIcon{
+  width: 52px;
+  height: 52px;
+}
+
 ul {
   text-align: left;
 }
