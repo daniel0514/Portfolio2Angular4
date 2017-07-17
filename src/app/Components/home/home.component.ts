@@ -141,9 +141,9 @@ export class HomeComponent{
             }
         },
         "descriptions": {
-            "brief": "A Web Application to display restaurants along with their ratings/comments on Google Map and nearby parking spots.",
-            "paragraph1": "Shop Online! is a website made for online shopping experience (for custoemrs) and inventory management (for managers and clerks). Customers can added items (if available) to their baskets and checkout items at once. Managers or clerks can create reports of top selling items, daily sells, and inventory counts. The website also has a login system to determine user information once accounts are created.",
-            "paragraph2": "Shop Online is written in PHP and HTML, and the website uses MySQL database for data storage. The results of SQL queries are then displayed in a readable format without any modification to the results. For security, the website uses POST method in form handling to hide information from users. Passwords are encrypted with Blowfish Encryption and then stored in the database."
+            "brief": "A PHP online store with login system for the purposes of online shopping, inventory management, and report generation.",
+            "paragraph1": "Shop Online! is a website for online shopping and inventory management. Customers can added items to their baskets and checkout items at once. Managers can create reports of top selling items, daily sells, and inventory counts. The website also has a login system for the users.",
+            "paragraph2": "Shop Online is written in PHP and HTML and uses MySQL database for data storage. The results of SQL queries are then displayed in a readable format. For security, the website uses POST method in form handling. Passwords are encrypted with Blowfish Encryption and then stored in the database."
         },
         "images": []
     },
@@ -193,8 +193,8 @@ export class HomeComponent{
         },
         "descriptions": {
             "brief": "An Unity Game created during 2015 Windows 10 Game Jam by a group of four students.",
-            "paragraph1": "During the 2015 Windows 10 Game Jam, a group of four students developed an Unity game within two days. Throughout the game, the player will consume various sushi that represent numbers and mathematical operators. The consumed sushi then forms a mathematical equation that the player must solve at the end",
-            "paragraph2": "The purpose of the game is to promote mental math for younger kids with basic math operations. The group and I were able to develop a fully functional game without previous Unity knowledge within just two days, and we learned to worked together, to delegate tasks effectively, and to work under a tight schedule."
+            "paragraph1": "During the 2015 Windows 10 Game Jam, four students developed an Unity game within two days. The player will consume various sushi that represent numbers and mathematical operators. The consumed sushi then forms a mathematical equation that the player must solve at the end",
+            "paragraph2": "The purpose of the game is to promote mental math for younger kids with basic math operations. TWe able to develop a fully functional game without previous Unity knowledge within just two days. We learned to worked together, to delegate tasks effectively, and to work under a tight schedule."
         },
         "images": []
     },
