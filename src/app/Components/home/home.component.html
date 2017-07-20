@@ -1,21 +1,22 @@
 <div class="container">
   <div class="cell imageCell"><img src="./assets/img/profilePicture.jpg" class="circularImg"/></div>
-  <a href="aboutme"><div class="cell"><div><p>Name's Daniel (Yung Tse) Hsiao. I graduated from UBC with a Bachelor of Computer Science Degree in 2017.</p></div></div></a>
-  <a href="aboutme"><div class="cell"><div><p>My interest is mainly in Web Development and Application Development, especially Android Development.</p></div></div></a>
-  <a href="aboutme"><div class="cell"><div><ul>Skill set:</ul><li>Java</li><li>JavaScript</li><li>HTML & CSS</li><li>SQL and Databases</li></div></div></a>
-  <div class="cell" id="beforeProjects" ><p></p></div>
+  <a href="aboutme"><div class="cell"><p>Name's Daniel (Yung Tse) Hsiao. I graduated from UBC with a Bachelor of Computer Science Degree in 2017.</p></div></a>
+  <a href="aboutme"><div class="cell"><p>My interest is mainly in Web Development and Application Development, especially Android Development.</p></div></a>
+  <a href="aboutme"><div class="cell"><div><h3>Skill set</h3><ul><li>Java</li><li>JavaScript</li><li>HTML & CSS</li><li>SQL and Databases</li></ul></div></div></a>
+  <div class="cell" id="beforeProjects" ></div>
   <a *ngFor="let project of projectsIn; let i = index;" (@animateIn.done) = "nextProject()" [@animateIn] = "'in'" [href] = 'getHrefPath(project.name)' on-mouseover='hovered[i] = true' on-mouseleave="hovered[i] = false">
     <div class="cell project" *ngIf="hovered[i] == false">
       <div>
-        <p>{{project.name}}</p>
-        <img *ngFor="let image of project.technology.icons" [src]="getTechnologyPath(image)" class="technologyIcon"/>
+        <h3>{{project.name}}</h3>
+        <div class="icons">
+          <img *ngFor="let image of project.technology.icons" [src]="getTechnologyPath(image)" class="technologyIcon"/>
+        </div>
       </div>
     </div>
     <div class="cell project" *ngIf="hovered[i] == true">
       <div>
         <p>{{project.descriptions.brief}}</p>
         <ul>
-          Technlogy:
           <li *ngFor="let tech of project.technology.hover">
             {{tech}}
           </li>
@@ -25,9 +26,11 @@
   </a>
   <div class="cell" id="afterProjects">
     <div>
-      <p>Links</p>
-      <a href="http://www.github.com/daniel0514/"><img src="./assets/img/GitHub.png"/></a>
-      <a href="https://www.linkedin.com/in/yung-tse-daniel-hsiao-4199a5b6/"><img style="width:90px height:90px" src="./assets/img/LinkedIn.png"/></a>
+      <h3>Links</h3>
+      <div class="icons">
+        <a href="http://www.github.com/daniel0514/"><img src="./assets/img/GitHub.png"/></a>
+        <a href="https://www.linkedin.com/in/yung-tse-daniel-hsiao-4199a5b6/"><img src="./assets/img/LinkedIn.png"/></a>
+      </div>
     </div>
   </div>
 </div>
