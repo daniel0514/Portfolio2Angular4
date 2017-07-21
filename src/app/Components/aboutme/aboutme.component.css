@@ -1,6 +1,6 @@
 
 .cell{
-  height:20em;
+  height:16em;
   min-width:30em;
   border: 2px solid black;
   display: flex;
@@ -31,7 +31,7 @@
   border-radius: 15px;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1100px) {
   .back {
     grid-column-start: span 2;
     grid-column: 1 / -1;
