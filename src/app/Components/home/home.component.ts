@@ -70,6 +70,8 @@ export class HomeComponent{
   getTechnologyPath(tech){
     if(tech.includes("Android")){
       return "./assets/img/skills/Android_Icon.png";
+    } else if(tech.includes("JavaScript")){
+      return "./assets/img/skills/JS_Icon.png";
     } else if(tech.includes("Java")){
       return "./assets/img/skills/Java_Icon.png";
     } else if(tech.includes("SQL")){
@@ -78,9 +80,7 @@ export class HomeComponent{
       return "./assets/img/skills/HTML_Icon.png";
     }  else if(tech.includes("CSS")){
       return "./assets/img/skills/CSS_Icon.png";
-    } else if(tech.includes("JavaScript")){
-      return "./assets/skills/JS_Icon.png";
-    } else if(tech.includes("BootStrap")){
+    }else if(tech.includes("BootStrap")){
       return "./assets/img/skills/Bootstrap_Icon.png";
     } else if(tech.includes("Unity")){
       return "./assets/img/skills/UNITY_Icon.png";
