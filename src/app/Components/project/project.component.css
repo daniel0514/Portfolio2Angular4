@@ -25,11 +25,21 @@
 }
 
 
+.back img {
+  width: 50px;
+  height: 50px;
+}
+
 @media only screen and (min-width: 900px) {
+
+  .back {
+    grid-column-end: span 2;
+  }
+
   .container {
     display: grid;
-    grid-template-columns: repeat(2, minmax(40em ,1fr));
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(40em, 1fr));
+    grid-template-rows: 0.1fr 1fr 1fr 1fr;
     grid-auto-flow: column;
   }
 }
