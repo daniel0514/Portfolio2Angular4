@@ -1,23 +1,43 @@
 .subcell{
-  height:15vw;
-  width:30vw;
+  min-height: 20em;
+}
+
+.cell {
+  min-width: 20em;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 2px solid black;
   background: #ff3b3f;
+  border-radius: 15px;
+}
+
+.gallery{
+  min-height: 60em;
+  grid-row-end: span 3;
+  padding: 4px 0 4px 0;
 }
 
 .container {
-  max-height: 50vw;
-  display: flex;
-  flex-flow: column wrap;
-  width: 60vw;
+  display: grid;
+  grid-template-columns: minmax(40em ,1fr);
+  grid-gap: 10px;
 }
+
+
+@media only screen and (min-width: 900px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(40em ,1fr));
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-auto-flow: column;
+  }
+}
+
 
 .subcell p{
   padding: 0px 30px;
-  font-size: 1.5vw;
+  font-size: 2em;
 }
 
 .imageSlide {
@@ -28,44 +48,14 @@
   opacity: 1;
 }
 
-.gallery{
-  height:45vw;
-  width:30vw;
-  border: 2px solid black;
-  background: #ff3b3f;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 4px 0 4px 0;
-}
-
 .galleryButton{
-  height: 10vw;
+  height: 10em;
+  width: 2em;
+  margin: 0 5px;
+  border-radius: 15px;
 }
 
 canvas {
   max-height: 90%;
-}
-
-
-@media only screen and (max-width: 1000px) {
-  .subcell{
-    height:40vw;
-    width:80vw;
-  }
-
-  .container {
-    max-height: 300vw;
-    flex-flow: column;
-    width: 80vw;
-  }
-
-  .gallery{
-    height:120vw;
-    width:80vw;
-  }
-  .subcell p{
-    font-size: 3vw;
-  }
-
+  width: auto;
 }
