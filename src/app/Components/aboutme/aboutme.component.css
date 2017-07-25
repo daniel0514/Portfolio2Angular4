@@ -10,6 +10,7 @@
   border-radius: 15px;
 }
 
+
 .container {
   display: grid;
   grid-template-columns: minmax(20em ,1fr);
